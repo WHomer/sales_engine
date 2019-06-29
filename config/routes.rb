@@ -11,8 +11,11 @@ Rails.application.routes.draw do
         get '/find', to: 'finds#show' 
         get '/find_all', to: 'finds#index' 
         get '/random', to: 'randoms#show'
+        get '/:id/invoices', to: 'invoices#index'
+        get '/:id/transactions', to: 'transactions#index'
       end
       resources :customers, only: [:index, :show]
+
       scope module: 'invoice_items', path: 'invoice_items' do
         get '/find', to: 'finds#show' 
         get '/find_all', to: 'finds#index' 

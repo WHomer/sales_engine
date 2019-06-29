@@ -18,7 +18,7 @@ describe do
       invoice_item_response = JSON.parse(response.body)["data"]["attributes"]
 
       expect(invoice_item_response["id"]).to eq(i3.id)
-      expect(invoice_item_response["quantity"]).to eq(i1.quantity)
+      expect(invoice_item_response["quantity"]).to eq(i3.quantity)
     end
   end
 
