@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       scope module: 'merchants', path: 'merchants' do
         get '/find', to: 'finds#show' 
         get '/find_all', to: 'finds#index' 
+        get '/random', to: 'randoms#show'
       end
       resources :merchants, only: [:index, :show] 
       resources :customers, only: [:index, :show]
