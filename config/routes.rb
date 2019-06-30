@@ -9,6 +9,7 @@ Rails.application.routes.draw do
         get '/:id/items', to: 'items#index'
       end
       resources :merchants, only: [:index, :show] 
+
       scope module: 'customers', path: 'customers' do
         get '/find', to: 'finds#show' 
         get '/find_all', to: 'finds#index' 
@@ -24,20 +25,27 @@ Rails.application.routes.draw do
         get '/random', to: 'randoms#show'
       end
       resources :invoice_items, only: [:index, :show]
+
       scope module: 'invoices', path: 'invoices' do
         get '/find', to: 'finds#show' 
         get '/find_all', to: 'finds#index' 
         get '/random', to: 'randoms#show'
         get '/:id/invoice_items', to: 'invoice_items#index'
         get '/:id/merchant', to: 'merchants#show'
+        get '/:id/transactions', to: 'transactions#index'
+        get '/:id/items', to: 'items#index'
+        get '/:id/customer', to: 'customers#show'
+
       end
       resources :invoices, only: [:index, :show]
+
       scope module: 'items', path: 'items' do
         get '/find', to: 'finds#show' 
         get '/find_all', to: 'finds#index' 
         get '/random', to: 'randoms#show'
       end
       resources :items, only: [:index, :show]
+
       scope module: 'transactions', path: 'transactions' do
         get '/find', to: 'finds#show' 
         get '/find_all', to: 'finds#index' 
