@@ -11,5 +11,6 @@ class Customer < ApplicationRecord
       .group("merchants.id")
       .order("successful_transactions DESC")
       .limit(1)
+      .take
   end
 end
